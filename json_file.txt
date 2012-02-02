@@ -1,0 +1,19 @@
+{
+    "sEcho": {{sEcho}},
+    "iTotalRecords": {{iTotalRecords}},
+    "iTotalDisplayRecords": {{iTotalDisplayRecords}},
+    "aaData":[
+    {% for item in querySet %}
+    [
+	"<a href='/policy/{{ item.id }}/'>{{ item.last_name }}</a>",
+	etc,
+	etc
+
+
+	]
+    {% if not forloop.last %}
+    ,
+    {% endif %}
+    {% endfor %}
+    ]
+}
