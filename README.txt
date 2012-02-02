@@ -82,11 +82,9 @@ $(function(){
 $.getJSON("{% url config %}",
 			null,
 			function( json ){
-							osTable = $('#{{ table_id }}').dataTable(json);
-							});
-
-    
+			osTable = $('#{{ table_id }}').dataTable(json);
 			});
+    			});
 }}}
 
 6. Configure the rest of the template:
@@ -111,11 +109,8 @@ you can override the get_table method that generates the table.
 	$(function(){
 
 	$.getJSON("{% url config %}",null,function( json ){
-
 					osTable = $('#{{ table_id }}').dataTable(json);
 					});
-
-		
 	});
 
 	</script>
