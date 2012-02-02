@@ -1,13 +1,13 @@
 = django_datatables =
 django_datatables aims to simplify integration of the datatables jquery plugin, 
 while providing a familiar API and adhering to DRY principals.
-Most features should be accesable fromwithin the Django / Python API.
+Most Datatables features should be accessible from within the Django / Python API.
 
 == Acknowledgements ==
 Lukasz Dziedzia and Pawel Roman for creating the get_datatables_records method.
 http://www.assembla.com/code/datatables_demo/subversion/nodes/trunk/1_6_2
 
-inspiration from https://github.com/gerry/django-jqgrid
+Inspiration from https://github.com/gerry/django-jqgrid
 
 
 == Prerequisites ==
