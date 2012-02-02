@@ -1,4 +1,3 @@
-
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from mydatatables import Example
@@ -9,7 +8,7 @@ def listall(request):
     table_id = "Example"
     table = a.get_table(table_id, "display")
     c = {'table':table,'table_id':table_id }
-    return render_to_response('policylist.html', c)
+    return render_to_response('example.html', c)
 
 def ajax(request):
     a = Example()
