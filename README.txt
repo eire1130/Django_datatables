@@ -1,7 +1,7 @@
 = django_datatables =
 django_datatables aims to simplify integration of the datatables jquery plugin, 
 while providing a familiar API and adhering to DRY principals.
-Most Datatables features should be accessible from within the Django / Python API.
+Most Datatables features should be accessible from within the django_datatables API.
 
 == Acknowledgements ==
 Lukasz Dziedzia and Pawel Roman for creating the get_datatables_records method.
@@ -21,6 +21,7 @@ Inspiration from https://github.com/gerry/django-jqgrid
 Defining the class is similar to Django Models and ModelForms.
 
 {{{
+class Example(datatables.DataTables):
     model = PN #a model can be defined directly, or a queryset can be defined using queryset = XXX. If both are defined, the model will override the queryset.
     class Meta:
 		#Params is a tuple of two element tuples. These are the options taken from the Datatables options. If the second option is a dictionary, it should be here as well.
@@ -74,7 +75,7 @@ urlpatterns = patterns('myproject.views',
     url(r'^config/$', 'config',name='config'),
 }}}
 
-5. Configure jgrid to use the defined urls. Here I am using 
+5. Configure datatables to use the defined urls. Here I am using the django url tag:
 {{{
 var osTable;
 $(function(){
@@ -89,7 +90,7 @@ $.getJSON("{% url config %}",
 
 6. Configure the rest of the template:
 
-Notice I am using the {{ table }} to generate the entire table. You can still write it out the headers manually, or if you requre more customization,
+Notice I am using the {{ table }} tag to generate the entire table. You can still write it out the headers manually, or if you require more customization,
 you can override the get_table method that generates the table.
 
 
