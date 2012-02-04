@@ -8,6 +8,7 @@ from django.utils import simplejson
 from django.template.loader import render_to_string
 from django.utils.encoding import force_unicode
 from django.utils.safestring import mark_safe
+from django.forms.widgets import media_property
 
 class ModelTableOptions(object):
     def __init__(self, options=None):
@@ -29,6 +30,8 @@ class DataTablesMetaclass(type):
                 attrs)
         if not parents:
             return new_class
+        if 'media' not in attrs:
+            new_class.media = media_property(new_class)
         opts = new_class._meta = ModelTableOptions(getattr(new_class, 'Meta', None))
         try:
             declared_params = dict(opts.params)
