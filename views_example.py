@@ -7,7 +7,7 @@ def listall(request):
     a = Example()
     table_id = "Example"
     table = a.get_table(table_id, "display")
-    c = {'table':table,'table_id':table_id }
+    c = {'table':table,'table_id':table_id,'media':a}
     return render_to_response('example.html', c)
 
 def ajax(request):

@@ -4,25 +4,15 @@
 
 {% block scripts %}
 
-<link rel="stylesheet" href="/media/plugins/datatables/media/css/jquery.dataTables_themeroller.css"/>
+{{ media.media }}
 
-
-
-
-<script type="text/javascript" src="/media/plugins/datatables/media/js/jquery.dataTables.js"></script>
-
-
-<script type="text/javascript">
-var osTable;
-$(function(){
-
-$.getJSON("{% url config %}",null,function( json ){
-
-    			osTable = $('#{{ table_id }}').dataTable(json);
-    			});
-
-    
-});
+<script type="text/javascript" charset="utf-8">
+		var osTable;
+		$(function(){
+		$.getJSON("{% url bull_config %}",null,function( json ){
+		    			osTable = $('#{{ table_id }}').dataTable(json);
+		    			});
+		});
 
 </script>
 {% endblock %}

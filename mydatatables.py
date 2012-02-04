@@ -10,6 +10,10 @@ from pricing.pricer.models.stores import PN
 
 class Example(datatables.DataTables):
     model = PN
+    class Media:
+        js = ('/media/plugins/datatables/media/js/jquery.dataTables.min.js',
+              '/media/plugins/datatables/extras/ColVis/media/js/ColVis.min.js',
+              '/media/plugins/datatables/extras/ColReorder/media/js/ColReorder.min.js',)
     class Meta:
         params = (
                   ("bProcessing", True),
