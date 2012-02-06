@@ -9,7 +9,7 @@
 <script type="text/javascript" charset="utf-8">
 		var osTable;
 		$(function(){
-		$.getJSON("{% url bull_config %}",null,function( json ){
+		$.getJSON("{% url config %}",null,function( json ){
 		    			osTable = $('#{{ table_id }}').dataTable(json);
 		    			});
 		});
